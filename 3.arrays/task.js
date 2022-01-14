@@ -1,15 +1,13 @@
-function compareArrays(arr1, arr2) {
-  let result;
-
-  // Ваш код
-
-  return result; // boolean
+function compareArrays(firstArr, secondArr) {
+  return firstArr.length === secondArr.length && firstArr.every(function (value, index) {
+    return value === secondArr[index]
+  })
 }
 
 function advancedFilter(arr) {
-  let resultArr;
-
-  // Ваш код
-
-  return resultArr; // array
+  return arr.filter(function (number) {
+    return number > 0
+  }).filter(n => !(n % 3)).map(function (num) {
+    return num * 10
+  });
 }
