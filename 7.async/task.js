@@ -5,17 +5,11 @@ class AlarmClock {
     }
 
     addClock(time, action, id) {
-        function AlarmConstructor(time, action, id) {
-            this.time = time;
-            this.action = action;
-            this.id = id;
-        }
-
         if (id === undefined) throw new Error('В запросе отсутствует параметр ID');
         if (this.alarmCollection.some(item => item.id === id)) {
             console.error('Будильник не добавлен. Будильник с таким ID уже существует');
         } else {
-            this.alarmCollection.push(new AlarmConstructor(time, action, id));
+            this.alarmCollection.push({time, action, id});
         }
     }
 
